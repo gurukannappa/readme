@@ -1,0 +1,17 @@
+#------------------ Find countries of bulk IP's ---------------------
+# Ruby snippet
+ip_country = Hash.new
+ip_list = ["1.1.1.1", "8.8.8.8"]
+ip_list.each do |ip|
+  country = `whois #{ip} | grep -i country | head  -n 1 |awk '{print $2}'`.strip
+  ip_country[country] ||= Array.new
+  ip_country[country] << ip
+  puts "IP: #{ip} | Country: #{country}"
+end
+
+# SAMPLE OUTPUT
+IP: 1.1.1.1 | Country: AU
+IP: 8.8.8.8 | Country: US
+
+# choose to use the ip_country hash map to create a CSV or a JSON
+----------------------------------------------------------------------
