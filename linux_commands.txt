@@ -1,0 +1,73 @@
+-------------------------------------------------
+Changing file or directory permissions
+
+command:
+
+				chmod 777 file_name.txt
+
+--> chmod is the name of the command to modify the permissions
+
+--> 777 is a octal number representation of the permissions (Explaination below)
+
+--> file_name.txt is the name of the file for which the permission is to be changed
+		Note: It can be a file name or a directory name.
+
+Permission Type Explaination:
+	
+	r - Read Allowed
+	w - Write Allowed
+	x - Execute Allowed
+
+	There are three parts for permissions on whom it should be activated. They are Owner, members of a group, others.
+		-rwx(owner) rwx(group member) rwx (others)
+
+	1. the first part is owner
+	2. second part is group members
+	3. third part is others.
+
+	If u execute the following command
+
+		$ ls -al
+
+	you will get as below,
+
+	-rwx rwx rwx    then other attributes will be displayed.
+
+
+	the first hyphen indicates whether it is file or a directory
+
+	Eg: 
+	 if its a file then 
+	 										-rwx rwx rwx 
+	 if its a direcory then 
+	 										drwx rwx rwx 
+
+	So Octal Explaination:
+
+	7 (octal) - 111 (binary)
+	6 (octal) - 110 (binary)
+
+	the three bits in binary indicate the Read , Write and execute.
+
+	1. if it is 111 den read write and execute is allowed. the octal equivalent is 7
+
+	2. if it is 101 den read and execute is allowed and write is denied. the octal equivalent is 5
+
+	so 777 means
+
+		for owner provide read,write and execute
+
+		for group members provide read,write and execute
+
+		for others provide read,write and execute
+
+	so 755 means
+
+		for owner provide read,write and execute
+
+		for group members provide read and execute only
+		
+		for group members provide read and execute only
+
+-------------------------------------------------
+
