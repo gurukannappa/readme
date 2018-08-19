@@ -15,3 +15,12 @@ IP: 8.8.8.8 | Country: US
 
 # choose to use the ip_country hash map to create a CSV or a JSON
 ----------------------------------------------------------------------
+
+#-------------------- Generate AWS VPC SUBNETS -----------------------
+vpc_cidr = "10.0.0.0/16"
+split_cidr = vpc_cidr.split("/")
+cidr_length = split_cidr.last
+cidr_ip = split_cidr.first
+subnet_cidr_length = "22"
+
+----------------------------------------------------------------------

@@ -71,3 +71,56 @@ Permission Type Explaination:
 
 -------------------------------------------------
 
+System Metrics Monitoring
+
+command:
+	$ top
+
+	*Top command's configuration can be changed by pressing (capital)'W' 
+	*The configuration is saved in the respective users directory path in .toprc file
+	 Eg: /root/.toprc
+
+	after hitting top follow the below command tips
+
+	1. presss 'o' for the menu of metrics displayed and the order
+	2. press 'u' for filtering the process based on the user name specified.
+	3. press 'd' for changing the metrics refreshing interval of the top command.
+	4. pressing 'c' will display the full path of the executable of the process in the commands section.
+	5. running 'top -n 10 -b > outputfile.txt' will save the top output for n specified times to the output file.
+	6. Pressing 'Shift + P' will sort top result based on CPU utilization.
+-------------------------------------------------
+
+Kill Signals Overview
+
+kill is a system call used to send signals for processes running in linux.
+
+There are few types of kill commands like kill, killall, xkill, pkill
+
+Here kill is discussed.
+
+command: kill
+
+	$ kill -l 
+
+	This command lists all the signals that are available in the system.
+	Note: Signal numbers will differ on different distributions. I had different numbers in MAC and RHEL.
+
+SIGNALS DESCRIPTION:
+SIGSTOP: This will pause the current process. Process cannot ignore this signal. 
+	This state can be seen in 'top' command with process state in 'S' column as 'T'
+
+SIGCONT: Stopped process can be resumed with this signal. 
+	This state can be seen in 'top' command with process state in 'S' column as 'S'
+
+SIGCHILD: When a parent process loses a child process, it is notified with a SIGCHILD signal for it to cleanup or release resources related to the child process
+
+SIGABRT: Any process which would terminate on its own due to unexpected errors by the application itself will send this signal.
+
+SIGINT: Similar to control + C key combination. Interrupting the process and asking it to stop, however the process can ignore the signal. 
+
+SIGTERM: Requesting the process to gracefully shutdown by saving its progress/ release its resources. however the process can ignore the signal.
+
+SIGTRAP: When a process is encountered an event for which a debugger is waiting for, this signal will be sent to the process. This is used for debugging purpose.
+
+SIGQUIT: Terminate the process with coredump ability.
+-------------------------------------------------
