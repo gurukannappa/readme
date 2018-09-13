@@ -124,3 +124,18 @@ SIGTRAP: When a process is encountered an event for which a debugger is waiting 
 
 SIGQUIT: Terminate the process with coredump ability.
 -------------------------------------------------
+
+fswatch
+
+This command is used for tracking linux file system events. 
+This command uses inotify linux file system API
+
+For day to day usage i use it for decreasing my work load.
+This will be useful for who dont use IDE's 
+
+1. Compile programs when saved.
+
+	fswatch filename.c | xargs -n1 gcc -o filename
+
+
+
