@@ -139,3 +139,28 @@ This will be useful for who dont use IDE's
 
 
 
+----------------------------------------------------------
+
+name=guruprasad
+echo $name
+guruprasad
+
+the above statement will print the content of the variable name
+
+after typing bash, a new process in created.
+
+if we try to print $name it will not be present as its not the current context
+
+home$ name=guruprasad
+home$ echo $name
+home$ guruprasad
+home$ bash
+home$ echo $name
+home$
+home$ exit
+home$ echo $name
+home$ guruprasad
+
+to make variables visible for the child processes we need to export them
+export name=guruprasad
+then print it anywhere in sub process then it will print.
