@@ -6,7 +6,7 @@ $ if [[ -z "guru" ]]; then  echo "this is zero"; else echo "non zero"; fi
 
 if [[ -z "guru" ]] ; then
   echo "this is zero";
-else 
+else
   echo "non zero";
 fi
 
@@ -14,7 +14,7 @@ fi
 
 -e option inside the shell if condition is used to check if a file exists or not.
 
-if [ -e /home/tmp.txt ]; then 
+if [ -e /home/tmp.txt ]; then
 echo "file exists"
 else
 echo "file does not exists"
@@ -24,7 +24,7 @@ fi
 
 $@ is the list of parameters passed via command line. not the number of arguments.
 
-$ sample_shell.sh arg1 arg2 arg3 
+$ sample_shell.sh arg1 arg2 arg3
 
 inside of the shell script if we access $@ it will give all the arguments as string
 
@@ -32,7 +32,7 @@ inside of the shell script if we access $@ it will give all the arguments as str
 
 $# is the number count of the arguments
 
-inside of the shell script of accessing $# will give the number of arguments passed to 
+inside of the shell script of accessing $# will give the number of arguments passed to
 the shell script like $1, $2, $3... basically $@ which is the list of arguments will expand to $1, $2..
 
 ------------
@@ -53,7 +53,7 @@ something in the first line
 Adding new users in linux
 
 NOTES:
-. useradd or adduser can be used. 
+. useradd or adduser can be used.
 . adduser is a symbolic link to useradd
 . While adding users there are several files modified. /etc/passwd, /etc/group, /etc/shadow, /etc/gshadow, /var/spool/mail/
 
@@ -67,8 +67,26 @@ useradd -m -d /home/some_dir_name user_name_to_add
 
 -d says use the specified directory that is provided. if the given directory is not present and if -m is not provided it will not create the home directory
 
-----------------
+----------------			
+    Remote Port Forwarding.					    
+     										    
+     ssh remote_username@remote_ip_address -R remote_port:localaddress:localsshport 
 
+    SSH Jump Host
+
+     ssh -J remote_username@public_ip_address remote_username@private_ip_address
+
+    SSH Jump Host with Port Forwarding
+
+     ssh -J remote_username@public_ip_address remote_username@private_ip_address -R 8000:localhost:22
+
+     [
+       8000 is the port to open in remote machine to connect to
+       localhost is the host name from where the connection to be started
+       22 is the port of the host from where the ssh service is initiating
+     ]
+       	       	       	       	       	       	       	       	       	       	     
+----------------
 TO UNDERSTAND:
 
 cat <<-END >&2
@@ -76,3 +94,7 @@ this is echoed script
 END
 
 how cat is used and what is the redirection present in the odd place
+
+---
+
+
